@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "网易云音乐",
+  "usingComponents": {
+    "search-input": "/components/SearchInput",
+    "tabs": "/components/Tabs",
+    "recommend-music": "/components/RecommendMusic",
+    "hot-song-list": "/components/HotSongList",
+    "recommend-mv": "/components/RecommendMv"
+  }
+}

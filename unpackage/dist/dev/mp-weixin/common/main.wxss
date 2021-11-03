@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+page,view,text,image,audio,video,navigator,swiper,swiper-item,slider{
+box-sizing: border-box;
+}
+

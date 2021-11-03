@@ -1,0 +1,232 @@
+
+.main {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+}
+.bag {
+	z-index: -2;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: blur(70rpx);
+	-webkit-filter: blur(70rpx);
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+.bag::after {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.back {
+	position: absolute;
+	top: 4%;
+  width: 80rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  background-color: rgba(255, 250, 250, .1);
+  margin-left: 20rpx;
+}
+.back image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 5rpx;
+}
+.song_title {
+	width: 40%;
+	text-align: center;
+	margin-left: 30%;
+	margin-top: 7%;
+}
+.song_name {
+	font-size: 34rpx;
+	color: #ffffff;
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+.song_artist {
+	font-size: 24rpx;
+	color: #999999;
+	-webkit-filter: brightness(60%);
+	        filter: brightness(60%);
+}
+.play_bar{
+	z-index: 3;
+	position: absolute;
+	left: 50%;
+	margin-left: -3%;
+	  width: 26%;
+	  -webkit-transform: rotate(-25deg);
+	          transform: rotate(-25deg);
+	    -webkit-transform-origin: 12px 12px;
+	            transform-origin: 12px 12px;
+	    -webkit-transition: 1s;
+	    transition: 1s;
+}
+
+/* 播放杆 转回去 */
+.player_con.playing .play_bar {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+.disc {
+	z-index: 2;
+	position: absolute;
+	left: 50%;
+	margin-left: -32.5%;
+  width: 65%;
+  margin-top: 18%;
+  border-radius: 50%;
+    border: 5rpx solid rgba(250, 250, 250, .3);
+}
+.cover {
+	z-index: 1;
+	position: absolute;
+	left:50%;
+	margin-left: -20%;
+	width: 40%;
+	height: 20%;
+	margin-top: 30%;
+}
+
+/* 旋转的动画 */
+@-webkit-keyframes Rotate {
+from {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+}
+to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+}
+}
+@keyframes Rotate {
+from {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+}
+to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+}
+}
+
+/* 旋转的类名 */
+.autoRotate {
+  -webkit-animation-name: Rotate;
+          animation-name: Rotate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+/* 是否正在播放 */
+.player_con.playing .disc,
+.player_con.playing .cover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.slider_item {
+	position: absolute;
+	bottom: 20%;
+	left: 0;
+	right: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	width: 96%;
+	margin: 0 auto;
+	padding: 20rpx;
+	border-radius: 15rpx;
+	background-color: rgba(255, 250, 250, 0.1);
+}
+.slider_playing {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.slider_playing image {
+	width: 100rpx;
+	height: 100rpx;
+}
+.slider {
+	-webkit-box-flex: 9;
+	-webkit-flex: 9;
+	        flex: 9;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+.slider_time {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	padding: 0 30rpx;
+	font-size: 28rpx;
+	color: #ffffff;
+}
+.comment_wrap {
+  position: absolute;
+  bottom: 32%;
+  right: 20rpx;
+  border-radius: 30rpx;
+}
+.comment_item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  border-radius: 30rpx;
+  padding: 5rpx 10rpx;
+  background-color: rgba(255, 250, 250, .1);
+}
+.comment_title {
+  font-size: 24rpx;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10rpx;
+  margin-left: 5rpx;
+}
+.comment_icon image {
+  width: 38rpx;
+  height: 38rpx;
+}
+

@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/musicDetail/musicDetail",
+    "pages/mvDetail/mvDetail",
+    "pages/musicComment/musicComment",
+    "pages/playList/playList",
+    "pages/artist/artist",
+    "pages/album/album"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#d43c33",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}
